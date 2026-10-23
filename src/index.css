@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* STRICT Neo-Brutalist Constraints */
+* {
+  border-radius: 0px !important;
+}
+
+body {
+  margin: 0;
+  background-color: #FEFCE8;
+  color: #000000;
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F0DA;
+  border-left: 2px solid #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF1493;
+}
+
+/* Hazard Stripes for Breaches */
+.hazard-stripes-breach {
+  background: repeating-linear-gradient(
+    45deg,
+    #FF3333,
+    #FF3333 10px,
+    #000000 10px,
+    #000000 14px
+  );
+}
+
+.hazard-stripes-warning {
+  background: repeating-linear-gradient(
+    45deg,
+    #FFE600,
+    #FFE600 10px,
+    #000000 10px,
+    #000000 14px
+  );
+}
+
+.hazard-stripes-executing {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FFE600,
+    #FFE600 14px,
+    #000000 14px,
+    #000000 28px
+  );
+  background-size: 200% 200%;
+  animation: stripe-animation 1.5s linear infinite;
+}
+
+@keyframes stripe-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Tactile Button Press Styles */
+.tactile-btn-primary {
+  background-color: #FF1493;
+  color: #FFFFFF;
+  font-weight: 700;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  transition: transform 70ms ease, box-shadow 70ms ease;
+}
+.tactile-btn-primary:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+.tactile-btn-primary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+
+.tactile-btn-secondary {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-weight: 700;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  transition: transform 70ms ease, box-shadow 70ms ease;
+}
+.tactile-btn-secondary:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+.tactile-btn-secondary:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.tactile-card {
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.tactile-card-selected {
+  background-color: #FEFCE8;
+  border: 3px solid #000000;
+  box-shadow: 2px 2px 0px 0px #000000;
+  transform: translate(2px, 2px);
+}
